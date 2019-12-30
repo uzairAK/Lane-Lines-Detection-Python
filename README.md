@@ -67,7 +67,7 @@ This is very important step as it involves checking the intercept of lines, whic
 ```python
 lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength=40, maxLineGap = 70)
 ```
-Hough Transform perform straight lines iteration throughout image with 360 degree slopes to find the intercepts between lines and store it in array.
+Hough Transform perform straight lines iteration throughout image with 360 degree slopes to find the intercepts between lines and store it in array. You can arrange the values of minimum langth of hough line and minimum gap between lines.
 
 ### Step 4: Now To display lines
 Since we now have lines parameters of slopes and intercepts. We can use these lines to make image from it.
@@ -87,6 +87,8 @@ plt.show()
 
 ![png](detector-in-notebook_files/detector-in-notebook_8_0.png)
 
+### Step 5: Combining the images
+In the following, since we lines image as well as original image. We combine themto get the proper image with lines highlighted
 
 ```python
 combo_image = cv2.addWeighted(lane_image, 0.8, line_image, 1, 1)
@@ -99,7 +101,8 @@ plt.show()
 
 ![png](detector-in-notebook_files/detector-in-notebook_9_0.png)
 
-
+Step 6: Optimizations (Extra Step)
+We can see that in the previous output. We get the lines but yet they are not aligned. So to optimize the result, we have the prarameters of slopes and intercepts of both lines combined. We store the individual slopes in separate array to make it easy for operation on them individually since there values of slopes are different, we have to handle them according to their slopes and interceots.
 
 ```python
 def make_coordinates(image, line_parameters):
