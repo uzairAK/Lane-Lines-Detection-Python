@@ -59,14 +59,17 @@ plt.show()
 ![png](detector-in-notebook_files/detector-in-notebook_4_0.png)
 
 
-Finding Lane Lines using Hough Transform and Hough Space
+### Step 3: Finding Lane Lines using Hough Transform and Hough Space
+This is very important step as it involves checking the intercept of lines, which may be in space of transformed line but separated.
 
+![png](detector-in-notebook_files/hough_concept.png)
 
 ```python
 lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength=40, maxLineGap = 70)
 ```
 
-Now To display lines
+### Step 4: Now To display lines
+Since we now have lines. We can use these lines to make image from it.
 
 
 ```python
