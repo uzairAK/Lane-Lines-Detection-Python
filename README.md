@@ -60,7 +60,7 @@ plt.show()
 
 
 ### Step 3: Finding Lane Lines using Hough Transform and Hough Space
-This is very important step as it involves checking the intercept of lines, which may be in space of transformed line but separated.
+This is very important step as it involves checking the intercept of lines, which may be in space of transformed line but not directly connected.
 
 ![png](detector-in-notebook_files/hough_concept.png)
 
