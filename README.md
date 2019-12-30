@@ -67,10 +67,10 @@ This is very important step as it involves checking the intercept of lines, whic
 ```python
 lines = cv2.HoughLinesP(cropped_image, 2, np.pi/180, 100, np.array([]), minLineLength=40, maxLineGap = 70)
 ```
+Hough Transform perform straight lines iteration throughout image with 360 degree slopes to find the intercepts between lines and store it in array.
 
 ### Step 4: Now To display lines
-Since we now have lines. We can use these lines to make image from it.
-
+Since we now have lines parameters of slopes and intercepts. We can use these lines to make image from it.
 
 ```python
 def displayLines(image, lines):
@@ -85,9 +85,7 @@ plt.imshow(line_image)
 plt.show()
 ```
 
-
 ![png](detector-in-notebook_files/detector-in-notebook_8_0.png)
-
 
 
 ```python
