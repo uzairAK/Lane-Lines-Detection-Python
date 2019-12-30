@@ -102,7 +102,7 @@ plt.show()
 ![png](detector-in-notebook_files/detector-in-notebook_9_0.png)
 
 Step 6: Optimizations (Extra Step)
-We can see that in the previous output. We get the lines but yet they are not aligned. So to optimize the result, we have the prarameters of slopes and intercepts of both lines combined. We store the individual slopes in separate array to make it easy for operation on them individually since there values of slopes are different, we have to handle them according to their slopes and interceots.
+We can see that in the previous output. We get the lines but yet they are not aligned. So to optimize the result, we have the prarameters of slopes and intercepts of both lines combined. We store the individual slopes in separate array to make it easy for operation on them individually since there values of slopes are different, we have to handle them according to their slopes and intercepts. We make the the coordinates of average slopes and intercepts of columns. Average of both columns (Slopes and intercepts). And the image is combined.
 
 ```python
 def make_coordinates(image, line_parameters):
