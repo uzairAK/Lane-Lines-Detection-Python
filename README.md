@@ -2,6 +2,14 @@
 ### Step 1: Edge Detection
 The Canny edge detector is an edge detection operator that uses a multi-stage algorithm to detect a wide range of edges in images. The Canny filter is a multi-stage edge detector. It uses a filter based on the derivative of a Gaussian in order to compute the intensity of the gradients.The Gaussian reduces the effect of noise present in the image. Then, potential edges are thinned down to 1-pixel curves by removing non-maximum pixels of the gradient magnitude. Finally, edge pixels are kept or removed using hysteresis thresholding on the gradient magnitude. The Canny has three adjustable parameters: the width of the Gaussian (the noisier the image, the greater the width), and the low and high threshold for the hysteresis thresholding.
 
+<ol>
+    <li>Apply Gaussian filter to smooth the image in order to remove the noise</li>
+<li>Find the intensity gradients of the image</li>
+<li>Apply non-maximum suppression to get rid of spurious response to edge detection</li>
+<li>Apply double threshold to determine potential edges</li>
+<li>Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges.</li>
+</ol>
+
 ```python
 # https://www.youtube.com/watch?v=eLTLtUVuuy4
 %matplotlib inline
@@ -27,7 +35,7 @@ plt.show()
 ![png](detector-in-notebook_files/detector-in-notebook_2_0.png)
 
 
-Step 2: Finding Region of Interest
+### Step 2: Finding Region of Interest
 
 
 ```python
